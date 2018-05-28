@@ -1,0 +1,38 @@
+<!-- The first rule we will examine comes from the most common case of function calls: 
+standalone function invocation. Think of this this rule as the default catch-all 
+rule when none of the other rules apply. -->
+
+<script>
+    function foo() {
+        console.log( this.a );
+    }
+
+    var a = 2;
+
+    foo(); // 2
+</script>
+
+<!-- The first thing to note, if you were not already aware, is that variables declared in the global scope, 
+as var a = 2 is, are synonymous with global-object properties of the same name. They're not copies of each 
+other, they are each other. Think of it as two sides of the same coin.
+
+Secondly, we see that when foo() is called, this.a resolves to our global variable a. Why? Because in this 
+case, the default binding for this applies to the function call, and so points this at the global object.
+
+How do we know that the default binding rule applies here? We examine the call-site to see how foo() is 
+called. In our snippet, foo() is called with a plain, un-decorated function reference. 
+
+If strict mode is in effect, the global object is not eligible for the default binding, so the this is 
+instead set to undefined. -->
+
+<script>
+    function foo() {
+        "use strict";
+
+        console.log( this.a );
+    }
+
+    var a = 2;
+
+    foo(); // TypeError: `this` is `undefined`
+</script>

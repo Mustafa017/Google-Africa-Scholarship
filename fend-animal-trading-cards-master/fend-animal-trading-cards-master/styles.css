@@ -1,0 +1,43 @@
+/* add your CSS here */
+body{
+    background-color: white;
+}
+ .container{
+     width: 320px;
+     border: solid 1px #ccc;
+     box-shadow: 10px 10px 5px -4px rgba(168,163,168,1);
+     padding: 10px;
+ }
+
+ img{
+     width: 300px;
+     height: 200px;
+     overflow: hidden;
+ }
+
+ .box{
+    border: solid 1px #fff;
+    padding-bottom: 10px;
+ }
+ 
+ .contentWrapper{
+     width: 280px;
+     height: auto;
+     border: solid 1px #ccc;
+     padding: 10px;
+ }
+ 
+ .contentWrapper>p:first-child{
+     font-style: italic;
+ }
+
+ ul{
+     margin: 0;
+     padding: 0;
+     list-style-type: none;
+}
+
+ ul>li>span{
+    font-weight: bold;
+ }
+ 
